@@ -1,0 +1,5 @@
+C:\Users\rathor2\source\repos\ClaimApp\Claim.LoggerService.Application\bin\Debug\Claim.LoggerService.Application.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.LoggerService.Application\bin\Debug\Claim.LoggerService.Application.pdb
+C:\Users\rathor2\source\repos\ClaimApp\Claim.LoggerService.Application\obj\Debug\Claim.LoggerService.Application.csproj.CoreCompileInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.LoggerService.Application\obj\Debug\Claim.LoggerService.Application.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.LoggerService.Application\obj\Debug\Claim.LoggerService.Application.pdb

@@ -1,0 +1,13 @@
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\Claim.IdentityService.Application.deps.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\Claim.IdentityService.Application.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\netcoreapp2.1\Claim.IdentityService.Application.csproj.CoreCompileInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\netcoreapp2.1\Claim.IdentityService.Application.AssemblyInfoInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\netcoreapp2.1\Claim.IdentityService.Application.AssemblyInfo.cs
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\netcoreapp2.1\Claim.IdentityService.Application.csprojAssemblyReference.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.xml
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\netcoreapp2.1\Claim.IdentityService.Application.csproj.CopyComplete

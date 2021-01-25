@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClaimDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AppUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AppUserRoles" Relationship="ClaimDataModel.FK__AppUserRo__UserI__3A81B327" FromRole="AppUser" ToRole="AppUserRole" />
+  </EntityType>
+  <EntityType Name="Claim">
+    <Key>
+      <PropertyRef Name="ClaimId" />
+    </Key>
+    <Property Name="ClaimId" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfAccident" Type="DateTime" Precision="3" />
+    <Property Name="PatientGender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ClaimStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="ClaimDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AppUsers" EntityType="Self.AppUser" />
+    <EntitySet Name="Claims" EntityType="Self.Claim" />
+    <EntitySet Name="AppRoles" EntityType="ClaimDataModel.AppRole" />
+    <EntitySet Name="AppUserRoles" EntityType="ClaimDataModel.AppUserRole" />
+    <AssociationSet Name="FK__AppUserRo__AppRo__3B75D760" Association="ClaimDataModel.FK__AppUserRo__AppRo__3B75D760">
+      <End Role="AppRole" EntitySet="AppRoles" />
+      <End Role="AppUserRole" EntitySet="AppUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AppUserRo__UserI__3A81B327" Association="ClaimDataModel.FK__AppUserRo__UserI__3A81B327">
+      <End Role="AppUser" EntitySet="AppUsers" />
+      <End Role="AppUserRole" EntitySet="AppUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AppRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="AppUserRoles" Relationship="ClaimDataModel.FK__AppUserRo__AppRo__3B75D760" FromRole="AppRole" ToRole="AppUserRole" />
+  </EntityType>
+  <EntityType Name="AppUserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="AppRoleId" Type="Int32" />
+    <NavigationProperty Name="AppRole" Relationship="ClaimDataModel.FK__AppUserRo__AppRo__3B75D760" FromRole="AppUserRole" ToRole="AppRole" />
+    <NavigationProperty Name="AppUser" Relationship="ClaimDataModel.FK__AppUserRo__UserI__3A81B327" FromRole="AppUserRole" ToRole="AppUser" />
+  </EntityType>
+  <Association Name="FK__AppUserRo__AppRo__3B75D760">
+    <End Type="ClaimDataModel.AppRole" Role="AppRole" Multiplicity="0..1" />
+    <End Type="ClaimDataModel.AppUserRole" Role="AppUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppUserRole">
+        <PropertyRef Name="AppRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AppUserRo__UserI__3A81B327">
+    <End Type="ClaimDataModel.AppUser" Role="AppUser" Multiplicity="0..1" />
+    <End Type="ClaimDataModel.AppUserRole" Role="AppUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

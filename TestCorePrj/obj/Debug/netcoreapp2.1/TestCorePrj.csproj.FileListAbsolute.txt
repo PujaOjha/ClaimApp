@@ -1,0 +1,9 @@
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\bin\Debug\netcoreapp2.1\TestCorePrj.deps.json
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\bin\Debug\netcoreapp2.1\TestCorePrj.dll
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\bin\Debug\netcoreapp2.1\TestCorePrj.pdb
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\obj\Debug\netcoreapp2.1\TestCorePrj.csprojAssemblyReference.cache
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\obj\Debug\netcoreapp2.1\TestCorePrj.csproj.CoreCompileInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\obj\Debug\netcoreapp2.1\TestCorePrj.AssemblyInfoInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\obj\Debug\netcoreapp2.1\TestCorePrj.AssemblyInfo.cs
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\obj\Debug\netcoreapp2.1\TestCorePrj.dll
+C:\Users\rathor2\source\repos\ClaimApp\TestCorePrj\obj\Debug\netcoreapp2.1\TestCorePrj.pdb

@@ -1,0 +1,6 @@
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Domain\obj\Debug\netcoreapp2.1\Claim.IdentityService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Domain\obj\Debug\netcoreapp2.1\Claim.IdentityService.Domain.AssemblyInfoInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Domain\obj\Debug\netcoreapp2.1\Claim.IdentityService.Domain.AssemblyInfo.cs
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Domain\bin\Debug\netcoreapp2.1\Claim.IdentityService.Domain.deps.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Domain\bin\Debug\netcoreapp2.1\Claim.IdentityService.Domain.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Domain\obj\Debug\netcoreapp2.1\Claim.IdentityService.Domain.csprojAssemblyReference.cache

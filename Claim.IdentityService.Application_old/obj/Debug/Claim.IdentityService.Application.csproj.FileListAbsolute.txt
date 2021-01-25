@@ -1,0 +1,2 @@
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\Claim.IdentityService.Application.csprojAssemblyReference.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.IdentityService.Application\obj\Debug\Claim.IdentityService.Application.csproj.CoreCompileInputs.cache

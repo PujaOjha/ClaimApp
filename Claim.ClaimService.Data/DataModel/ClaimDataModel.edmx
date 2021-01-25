@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClaimDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nchar" MaxLength="10" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AppUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="PasswordHash" Type="varchar" MaxLength="50" />
+          <Property Name="PasswordSalt" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AppUserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="AppRoleId" Type="int" />
+        </EntityType>
+        <EntityType Name="Claim">
+          <Key>
+            <PropertyRef Name="ClaimId" />
+          </Key>
+          <Property Name="ClaimId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" />
+          <Property Name="DateOfAccident" Type="datetime" />
+          <Property Name="PatientGender" Type="varchar" MaxLength="20" />
+          <Property Name="TelephoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ClaimStatus" Type="varchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <Association Name="FK__AppUserRo__AppRo__3B75D760">
+          <End Role="AppRole" Type="Self.AppRole" Multiplicity="0..1" />
+          <End Role="AppUserRole" Type="Self.AppUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AppUserRole">
+              <PropertyRef Name="AppRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AppUserRo__UserI__3A81B327">
+          <End Role="AppUser" Type="Self.AppUser" Multiplicity="0..1" />
+          <End Role="AppUserRole" Type="Self.AppUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AppUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClaimDataModelStoreContainer">
+          <EntitySet Name="AppRole" EntityType="Self.AppRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppUser" EntityType="Self.AppUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppUserRole" EntityType="Self.AppUserRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Claim" EntityType="Self.Claim" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AppUserRo__AppRo__3B75D760" Association="Self.FK__AppUserRo__AppRo__3B75D760">
+            <End Role="AppRole" EntitySet="AppRole" />
+            <End Role="AppUserRole" EntitySet="AppUserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AppUserRo__UserI__3A81B327" Association="Self.FK__AppUserRo__UserI__3A81B327">
+            <End Role="AppUser" EntitySet="AppUser" />
+            <End Role="AppUserRole" EntitySet="AppUserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClaimDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordSalt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AppUserRoles" Relationship="ClaimDataModel.FK__AppUserRo__UserI__3A81B327" FromRole="AppUser" ToRole="AppUserRole" />
+        </EntityType>
+        <EntityType Name="Claim">
+          <Key>
+            <PropertyRef Name="ClaimId" />
+          </Key>
+          <Property Name="ClaimId" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfAccident" Type="DateTime" Precision="3" />
+          <Property Name="PatientGender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ClaimStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ClaimDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppUsers" EntityType="Self.AppUser" />
+          <EntitySet Name="Claims" EntityType="Self.Claim" />
+          <EntitySet Name="AppRoles" EntityType="ClaimDataModel.AppRole" />
+          <EntitySet Name="AppUserRoles" EntityType="ClaimDataModel.AppUserRole" />
+          <AssociationSet Name="FK__AppUserRo__AppRo__3B75D760" Association="ClaimDataModel.FK__AppUserRo__AppRo__3B75D760">
+            <End Role="AppRole" EntitySet="AppRoles" />
+            <End Role="AppUserRole" EntitySet="AppUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AppUserRo__UserI__3A81B327" Association="ClaimDataModel.FK__AppUserRo__UserI__3A81B327">
+            <End Role="AppUser" EntitySet="AppUsers" />
+            <End Role="AppUserRole" EntitySet="AppUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AppRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="AppUserRoles" Relationship="ClaimDataModel.FK__AppUserRo__AppRo__3B75D760" FromRole="AppRole" ToRole="AppUserRole" />
+        </EntityType>
+        <EntityType Name="AppUserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="AppRoleId" Type="Int32" />
+          <NavigationProperty Name="AppRole" Relationship="ClaimDataModel.FK__AppUserRo__AppRo__3B75D760" FromRole="AppUserRole" ToRole="AppRole" />
+          <NavigationProperty Name="AppUser" Relationship="ClaimDataModel.FK__AppUserRo__UserI__3A81B327" FromRole="AppUserRole" ToRole="AppUser" />
+        </EntityType>
+        <Association Name="FK__AppUserRo__AppRo__3B75D760">
+          <End Type="ClaimDataModel.AppRole" Role="AppRole" Multiplicity="0..1" />
+          <End Type="ClaimDataModel.AppUserRole" Role="AppUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AppUserRole">
+              <PropertyRef Name="AppRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AppUserRo__UserI__3A81B327">
+          <End Type="ClaimDataModel.AppUser" Role="AppUser" Multiplicity="0..1" />
+          <End Type="ClaimDataModel.AppUserRole" Role="AppUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AppUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClaimDataModelStoreContainer" CdmEntityContainer="ClaimDataEntities">
+          <EntitySetMapping Name="AppUsers">
+            <EntityTypeMapping TypeName="ClaimDataModel.AppUser">
+              <MappingFragment StoreEntitySet="AppUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Claims">
+            <EntityTypeMapping TypeName="ClaimDataModel.Claim">
+              <MappingFragment StoreEntitySet="Claim">
+                <ScalarProperty Name="ClaimId" ColumnName="ClaimId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfAccident" ColumnName="DateOfAccident" />
+                <ScalarProperty Name="PatientGender" ColumnName="PatientGender" />
+                <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ClaimStatus" ColumnName="ClaimStatus" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppRoles">
+            <EntityTypeMapping TypeName="ClaimDataModel.AppRole">
+              <MappingFragment StoreEntitySet="AppRole">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppUserRoles">
+            <EntityTypeMapping TypeName="ClaimDataModel.AppUserRole">
+              <MappingFragment StoreEntitySet="AppUserRole">
+                <ScalarProperty Name="AppRoleId" ColumnName="AppRoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

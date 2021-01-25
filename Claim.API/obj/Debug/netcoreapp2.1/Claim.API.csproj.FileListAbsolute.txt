@@ -1,0 +1,17 @@
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\Claim.API.deps.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\Claim.API.runtimeconfig.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\Claim.API.runtimeconfig.dev.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\Claim.API.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\Claim.API.pdb
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.csprojAssemblyReference.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.csproj.CoreCompileInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.RazorAssemblyInfo.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.RazorAssemblyInfo.cs
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.AssemblyInfoInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.AssemblyInfo.cs
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.RazorTargetAssemblyInfo.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.pdb
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\rathor2\source\repos\ClaimApp\Claim.API\obj\Debug\netcoreapp2.1\Claim.API.genruntimeconfig.cache

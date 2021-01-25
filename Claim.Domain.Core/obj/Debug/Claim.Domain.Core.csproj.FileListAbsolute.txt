@@ -1,0 +1,9 @@
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\obj\Debug\Claim.Domain.Core.csprojAssemblyReference.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\obj\Debug\Claim.Domain.Core.csproj.CoreCompileInputs.cache
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\bin\Debug\Claim.Domain.Core.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\bin\Debug\Claim.Domain.Core.pdb
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\bin\Debug\MediatR.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\bin\Debug\MediatR.xml
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\obj\Debug\Claim.Domain.Core.csproj.CopyComplete
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\obj\Debug\Claim.Domain.Core.dll
+C:\Users\rathor2\source\repos\ClaimApp\Claim.Domain.Core\obj\Debug\Claim.Domain.Core.pdb
